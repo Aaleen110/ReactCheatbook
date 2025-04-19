@@ -158,6 +158,65 @@ Better reusability
 Lesser boilerplate code
 
 
+8. React Component Lifecycle
+React components go through several lifecycle phases: Mounting, Updating, Unmounting, and Error Handling.
+
+🟢 MOUNTING
+Mounting refers to putting elements into the DOM. There are 4 built-in methods called in this order:
+
+**constructor()**
+First method called when the component is initiated.
+Used to initialize state and bind methods.
+static getDerivedStateFromProps(props, state)
+Invoked right before rendering.
+Enables the component to update its internal state in response to prop changes.
+Returns an object to update the state, or null to do nothing.
+
+**render()**
+Returns the JSX that represents the component UI.
+
+**componentDidMount()**
+Called after the component is rendered in the DOM.
+
+Commonly used for:
+Fetching data
+Adding event listeners
+Subscriptions
+
+🔁 UPDATING
+Updating happens when props or state change. The lifecycle methods involved are:
+
+**static getDerivedStateFromProps(props, state)**
+Called again when component receives new props.
+
+**shouldComponentUpdate(nextProps, nextState)**
+Determines if the component should re-render.
+Returns a boolean (default is true).
+Useful for performance optimization.
+
+**render()**
+Called again to re-render UI based on new state/props.
+
+**getSnapshotBeforeUpdate(prevProps, prevState)**
+Called before the DOM is updated.
+Use case: capturing scroll position.
+
+**componentDidUpdate(prevProps, prevState)**
+Called after the component is updated in the DOM.
+Ideal for performing side effects in response to prop/state changes.
+
+🔻 UNMOUNTING
+**componentWillUnmount()**
+Called just before the component is removed from the DOM.
+Used for cleanup tasks such as:
+Removing event listeners
+Cancelling timers
+Unsubscribing from services
+
+❌ ERROR HANDLING
+**componentDidCatch(error, info)**
+Called when an error occurs during rendering or in lifecycle methods.
+Enables displaying fallback UI and logging errors gracefully.
 
 
 > 🚀 React revolutionized front-end development with its component-based architecture and virtual DOM optimization.
