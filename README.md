@@ -132,6 +132,31 @@ In React, **states** and **props** are two fundamental concepts that allow compo
 - Accessed in the child component via the `props` object.
 
 
+7. Class-based and Function-based Components in React
+📦 Class-based Components
+Extend from the React.Component base class.
+
+Use a render() method to return the component's JSX representation.
+
+Have access to lifecycle methods like:
+componentDidMount
+componentWillMount
+shouldComponentUpdate
+etc.
+
+⚡ Function-based Components
+Simple JavaScript functions that return JSX.
+More lightweight and concise compared to class-based components.
+Since React 16.8 (Feb 2019), with the introduction of Hooks, functional components can:
+Maintain state using useState
+Perform side effects using useEffect
+Use other hooks like useContext, useReducer, etc.
+
+Benefits:
+Simple syntax
+Better reusability
+Lesser boilerplate code
+
 
 
 
