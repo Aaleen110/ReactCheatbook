@@ -65,6 +65,8 @@ React takes a different approach by enabling you to build **Single Page Applicat
 - React **intercepts requests** and updates only what's necessary.
 - Leads to **better performance** and a **dynamic user experience**.
 
+> 🚀 React revolutionized front-end development with its component-based architecture and virtual DOM optimization.
+
 ---
 
 ## 4. Virtual DOM
@@ -131,8 +133,9 @@ In React, **states** and **props** are two fundamental concepts that allow compo
 - Enables component **reusability**, as different values can be passed to the same component.
 - Accessed in the child component via the `props` object.
 
+---
 
-7. Class-based and Function-based Components in React
+## 7. Class-based and Function-based Components in React
 📦 Class-based Components
 Extend from the React.Component base class.
 
@@ -157,14 +160,16 @@ Simple syntax
 Better reusability
 Lesser boilerplate code
 
+---
 
-8. React Component Lifecycle
+## 8. React Component Lifecycle
 React components go through several lifecycle phases: Mounting, Updating, Unmounting, and Error Handling.
 
-🟢 MOUNTING
+### 🟢 MOUNTING
 Mounting refers to putting elements into the DOM. There are 4 built-in methods called in this order:
 
 **constructor()**
+
 First method called when the component is initiated.
 Used to initialize state and bind methods.
 static getDerivedStateFromProps(props, state)
@@ -173,6 +178,7 @@ Enables the component to update its internal state in response to prop changes.
 Returns an object to update the state, or null to do nothing.
 
 **render()**
+
 Returns the JSX that represents the component UI.
 
 **componentDidMount()**
@@ -183,40 +189,58 @@ Fetching data
 Adding event listeners
 Subscriptions
 
-🔁 UPDATING
+### 🔁 UPDATING
+
 Updating happens when props or state change. The lifecycle methods involved are:
 
 **static getDerivedStateFromProps(props, state)**
+
 Called again when component receives new props.
 
 **shouldComponentUpdate(nextProps, nextState)**
+
 Determines if the component should re-render.
 Returns a boolean (default is true).
 Useful for performance optimization.
 
 **render()**
+
 Called again to re-render UI based on new state/props.
 
 **getSnapshotBeforeUpdate(prevProps, prevState)**
+
 Called before the DOM is updated.
 Use case: capturing scroll position.
 
 **componentDidUpdate(prevProps, prevState)**
+
 Called after the component is updated in the DOM.
 Ideal for performing side effects in response to prop/state changes.
 
-🔻 UNMOUNTING
+### 🔻 UNMOUNTING
 **componentWillUnmount()**
+
 Called just before the component is removed from the DOM.
 Used for cleanup tasks such as:
 Removing event listeners
 Cancelling timers
 Unsubscribing from services
 
-❌ ERROR HANDLING
+### ❌ ERROR HANDLING
 **componentDidCatch(error, info)**
+
 Called when an error occurs during rendering or in lifecycle methods.
 Enables displaying fallback UI and logging errors gracefully.
 
 
-> 🚀 React revolutionized front-end development with its component-based architecture and virtual DOM optimization.
+# Controlled and Uncontrolled Components
+
+## Controlled Components
+
+Controlled components are components that have their **state** and **behaviour** controlled by the parent component. These components rely on **props** passed down by their parent components to update their state and behaviour.
+
+## Uncontrolled Components
+
+Uncontrolled components manage their own **state** internally, without relying on the parent component to control or update their state. They are often used when you want to avoid passing too many props down the component tree.
+
+
