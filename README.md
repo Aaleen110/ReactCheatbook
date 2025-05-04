@@ -233,7 +233,7 @@ Called when an error occurs during rendering or in lifecycle methods.
 Enables displaying fallback UI and logging errors gracefully.
 
 
-# Controlled and Uncontrolled Components
+## 9. Controlled and Uncontrolled Components
 
 ## Controlled Components
 
@@ -242,5 +242,53 @@ Controlled components are components that have their **state** and **behaviour**
 ## Uncontrolled Components
 
 Uncontrolled components manage their own **state** internally, without relying on the parent component to control or update their state. They are often used when you want to avoid passing too many props down the component tree.
+
+## 10. Context API
+
+Context provides a way to share data between components without having to pass it explicitly through **props**. It allows you to create a **global state** or share **data and functions** that can be accessed by components within the given context.
+
+---
+
+## Creating a Context
+
+You create a context using the `React.createContext()` function. This returns an object with two components:
+
+- **Provider** – used to provide the context value.
+- **Consumer** – used to consume the context value.
+
+```jsx
+const MyContext = React.createContext();
+```
+
+Providing Data
+Wrap the components that need access to the context with the Provider component. The Provider accepts a value prop that contains the data you want to share.
+
+```jsx
+<MyContext.Provider value={/* value to be shared */}>
+  {/* Components that need access to the context */}
+</MyContext.Provider>
+```
+
+Consuming Data
+There are two ways to consume context data in a component:
+
+Using the Consumer Component
+
+```jsx
+
+<MyContext.Consumer>
+  {value => (
+    // Render based on the context value
+  )}
+</MyContext.Consumer>
+
+```
+
+Using the useContext Hook
+This is the recommended approach in functional components:
+
+```jsx
+const value = useContext(MyContext);
+```
 
 
